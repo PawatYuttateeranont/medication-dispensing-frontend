@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import DoctorOrder from '@/components/DoctorOrder'
+import PrescriptionAddPage from '@/components/PrescriptionAddPage'
+import PrescriptionPage from '@/components/PrescriptionPage'
+import PrescriptionDetailPage from '@/components/PrescriptionDetailPage'
 
 Vue.use(Router)
 
@@ -10,13 +12,23 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
+      name: 'home',
       component: HelloWorld
     },
     {
-      path: '/doctorOrder',
-      name: 'DoctorOrder',
-      component: DoctorOrder
+      path: '/create',
+      name: 'PrescriptionAddPage',
+      component: PrescriptionAddPage
+    },
+    {
+      path: '/list',
+      name: 'PrescriptionPage',
+      component: PrescriptionPage
+    },
+    {
+      path: '/detail',
+      name: 'PrescriptionDetailPage',
+      component: PrescriptionDetailPage
     }
   ]
 })

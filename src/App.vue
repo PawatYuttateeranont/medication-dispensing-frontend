@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    <router-link to="doctorOrder">Order</router-link>
+    <header-bar></header-bar>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import HeaderBar from "./components/HeaderBar.vue";
+
 export default {
+  components: {HeaderBar},
   name: 'App'
 }
 </script>
@@ -18,6 +21,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
