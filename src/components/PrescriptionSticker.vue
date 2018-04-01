@@ -19,6 +19,9 @@
       <div class="col-6 text-left">
         Patient Name: Pawat Yuttateeranont
       </div>
+      <div class="col-6 text-right">
+        Day of Birth: 01/01/1990
+      </div>
     </div>
 
     <hr>

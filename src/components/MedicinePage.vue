@@ -1,10 +1,11 @@
 <template>
   <div id="medicine-page" class="container">
-    <h3 class="text-left">Medicine Stock Report</h3>
+    <h3 class="text-left">Medicine Stock</h3>
 
     <div class="row">
-      <div class="col-12 text-right">
-        <button class="btn btn-info">Print Report</button>
+      <div class="col-12 pull-right">
+        <!--<button class="btn btn-info">Print Report</button>-->
+        <input type="text" class="form-control" placeholder="Search" style="width: 200px; float: right;"/>
       </div>
     </div>
 
