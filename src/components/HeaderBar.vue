@@ -5,6 +5,10 @@
     <router-link to="/create"><button class="btn btn-light">Create Prescription</button></router-link>
     |
     <router-link to="/list"><button class="btn btn-light">Prescription List</button></router-link>
+    |
+    <router-link to="/medicine"><button class="btn btn-light">Medicine Info</button></router-link>
+    |
+    <router-link to="/medicine-expire"><button class="btn btn-light">Medicine Expire</button></router-link>
   </div>
 </template>
 

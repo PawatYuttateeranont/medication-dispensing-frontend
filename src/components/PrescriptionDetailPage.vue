@@ -2,7 +2,7 @@
   <div id="prescription-detail-page" class="container">
 
     <h3 class="text-left">Prescription Detail : 00001</h3>
-    <h6 class="text-left">Status: <span class="text-warning">Pending</span></h6>
+    <h6 class="text-left">Status: <span class="text-danger">Reject</span></h6>
 
     <div class="row pt-2 pb-2">
       <div class="col-4 text-left">
@@ -25,22 +25,27 @@
           <th scope="col">Use of Drug</th>
           <th scope="col">Amount</th>
           <th scope="col">Unit</th>
+          <!--<th scope="col"></th>-->
         </tr>
         </thead>
         <tbody>
         <tr>
           <th scope="row">1</th>
           <td>Aspirin</td>
-          <td><textarea rows="5" class="form-control">Take one by month daily in the morning.</textarea></td>
-          <td><input type="number" class="form-control" value="2"/></td>
+          <td>Take one by month daily in the morning.</td>
+          <!--<td><input type="number" class="form-control" value="2"/></td>-->
+          <td>2</td>
           <td>Dose(s)</td>
+          <!--<td><button type="button" class="btn btn-outline-secondary">Print</button></td>-->
         </tr>
         <tr>
           <th scope="row">2</th>
           <td>Mendilex</td>
-          <td><textarea rows="5" class="form-control">Take one by month daily before lunch.</textarea></td>
-          <td><input type="number" class="form-control" value="10"/></td>
+          <td>Take one by month daily before lunch.</td>
+          <!--<td><input type="number" class="form-control" value="10"/></td>-->
+          <td>10</td>
           <td>Pill(s)</td>
+          <!--<td><button type="button" class="btn btn-outline-secondary">Print</button></td>-->
         </tr>
         </tbody>
       </table>
@@ -57,8 +62,9 @@
 
     <div class="row mt-3 mb-3">
       <div class="col-12 text-right">
-        <button type="button" class="btn btn-danger">Cancel</button>
-        <button type="button" class="btn btn-success">Submit</button>
+        <button type="button" class="btn btn-danger">Back</button>
+        <!--<button type="button" class="btn btn-danger">Cancel</button>-->
+        <!--<button type="button" class="btn btn-success">Submit</button>-->
       </div>
     </div>
 
@@ -67,7 +73,12 @@
 
 <script>
   export default {
-    name: 'PrescriptionDetailPage'
+    name: 'PrescriptionDetailPage',
+    data() {
+      return {
+
+      }
+    }
   }
 </script>
 

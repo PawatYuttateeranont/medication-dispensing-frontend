@@ -122,11 +122,11 @@
         },
         doctor: [],
         patients: [
-          { value: '1', text: '00001', name: 'Allison', surname: 'Chaplin', age: 20, sex: 'female', allergy: 'None' },
-          { value: '2', text: '00002', name: 'Hills',   surname: 'Jocelyn', age: 21, sex: 'male',   allergy: 'None' },
-          { value: '3', text: '00003', name: 'Kuphal',  surname: 'Shakira', age: 22, sex: 'male',   allergy: 'None' },
-          { value: '4', text: '00004', name: 'Hagenes', surname: 'Glenda',  age: 23, sex: 'female', allergy: 'None' },
-          { value: '5', text: '00005', name: 'Batz',    surname: 'Savion',  age: 24, sex: 'male',   allergy: 'None' }
+          { value: '1', text: '00001', name: 'Pawat',   surname: 'Yuttateeranont', age: 20, sex: 'male', allergy: 'None' },
+          { value: '2', text: '00002', name: 'Hills',   surname: 'Jocelyn',        age: 21, sex: 'male',   allergy: 'None' },
+          { value: '3', text: '00003', name: 'Kuphal',  surname: 'Shakira',        age: 22, sex: 'male',   allergy: 'None' },
+          { value: '4', text: '00004', name: 'Hagenes', surname: 'Glenda',         age: 23, sex: 'female', allergy: 'None' },
+          { value: '5', text: '00005', name: 'Batz',    surname: 'Savion',         age: 24, sex: 'male',   allergy: 'None' }
         ],
         selectedPatient: {
           value: '',
@@ -159,6 +159,10 @@
           amount: this.drugAmount,
         }
         this.selectedDrugs.push(drug)
+
+        /* clear input drug filed */
+        this.selectedDrug = {}
+        this.drugAmount = 0
       },
       deleteDrug: function (index) {
         this.selectedDrugs.splice(index ,1)

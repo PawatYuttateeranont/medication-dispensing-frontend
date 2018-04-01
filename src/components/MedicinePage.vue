@@ -1,0 +1,51 @@
+<template>
+  <div id="medicine-page" class="container">
+    <h3 class="text-left">Medicine Stock Report</h3>
+
+    <div class="row">
+      <div class="col-12 text-right">
+        <button class="btn btn-info">Print Report</button>
+      </div>
+    </div>
+
+    <div class="text-center mt-3 mb-3">
+      <table class="table center-align">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Amount</th>
+          <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Aspirin</td>
+          <td>-</td>
+          <td>98</td>
+          <td><button class="btn btn-outline-primary">Order</button></td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Mendilex</td>
+          <td>-</td>
+          <td>80</td>
+          <td><button class="btn btn-outline-primary">Order</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'MedicinePage'
+  }
+</script>
+
+<style>
+
+</style>

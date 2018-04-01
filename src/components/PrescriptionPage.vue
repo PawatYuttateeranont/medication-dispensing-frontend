@@ -25,7 +25,6 @@
           <td>-</td>
           <td>
             <router-link to="/detail"><button type="button" class="btn btn-outline-primary">Detail</button></router-link>
-            <button type="button" class="btn btn-outline-secondary">Print</button>
           </td>
         </tr>
         <tr>
@@ -37,7 +36,6 @@
           <td>Pharmacist A</td>
           <td>
             <router-link to="/detail"><button type="button" class="btn btn-outline-primary">Detail</button></router-link>
-            <button type="button" class="btn btn-outline-secondary">Print</button>
           </td>
         </tr>
         <tr>
@@ -49,7 +47,6 @@
           <td>Pharmacist A</td>
           <td>
             <router-link to="/detail"><button type="button" class="btn btn-outline-primary">Detail</button></router-link>
-            <button type="button" class="btn btn-outline-secondary">Print</button>
           </td>
         </tr>
         </tbody>
