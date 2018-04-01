@@ -22,16 +22,37 @@
         <tbody>
         <tr>
           <th scope="row">1</th>
-          <td>Aspirin</td>
-          <td>-</td>
-          <td>98</td>
+          <td>Tylenol tab 500 mg</td>
+          <td>Paracetamol</td>
+          <td>98 Tablet(s)</td>
           <td><button class="btn btn-outline-primary">Order</button></td>
         </tr>
         <tr>
           <th scope="row">2</th>
-          <td>Mendilex</td>
-          <td>-</td>
-          <td>80</td>
+          <td>Bisolvon tab 8 mg</td>
+          <td>Bromhexine</td>
+          <td>80 Tablet(s)</td>
+          <td><button class="btn btn-outline-primary">Order</button></td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Bisolvon tab 8 mg</td>
+          <td>Bromhexine</td>
+          <td>80 Tablet(s)</td>
+          <td><button class="btn btn-outline-primary">Order</button></td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Chlorphen tab 4 mg</td>
+          <td>Chlorpheniramine</td>
+          <td>100 Tablet(s)</td>
+          <td><button class="btn btn-outline-primary">Order</button></td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>PREVACID FDT tab 30 mg</td>
+          <td>Lansoprazole</td>
+          <td>100 Tablet(s)</td>
           <td><button class="btn btn-outline-primary">Order</button></td>
         </tr>
         </tbody>
