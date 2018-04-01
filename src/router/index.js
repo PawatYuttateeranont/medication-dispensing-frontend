@@ -6,6 +6,7 @@ import PrescriptionPage from '@/components/PrescriptionPage'
 import PrescriptionDetailPage from '@/components/PrescriptionDetailPage'
 import MedicinePage from '@/components/MedicinePage'
 import MedicineExpirePage from '@/components/MedicineExpirePage'
+import PrescriptionSticker from '@/components/PrescriptionSticker'
 
 Vue.use(Router)
 
@@ -41,6 +42,11 @@ export default new Router({
       path: '/medicine-expire',
       name: 'MedicineExpirePage',
       component: MedicineExpirePage
+    },
+    {
+      path: '/sticker',
+      name: 'PrescriptionSticker',
+      component: PrescriptionSticker
     }
   ]
 })
