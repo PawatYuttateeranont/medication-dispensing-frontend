@@ -1,6 +1,6 @@
 <template>
   <div id="medicine-expire-page" class="container">
-    <h3 class="text-left">Medicine Expire Report</h3>
+    <h3 class="text-left">Expired Medicine Report</h3>
     <h6 class="text-left">Return Medicine</h6>
 
     <div class="row">
@@ -16,27 +16,24 @@
           <th>#</th>
           <th scope="col">Name</th>
           <th scope="col">Lot</th>
-          <th scope="col">Expire Date</th>
+          <th scope="col">Expiration Date</th>
           <th scope="col">Amount</th>
-          <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
         <tr>
           <th scope="row">1</th>
-          <td>Aspirin</td>
+          <td>Tylenol tab 500 mg</td>
           <td>1</td>
-          <td>01/01/2020</td>
-          <td>98</td>
-          <td><button class="btn btn-outline-primary">Order</button></td>
+          <td>01/05/2018</td>
+          <td>8 Tablet(s)</td>
         </tr>
         <tr>
           <th scope="row">2</th>
-          <td>Mendilex</td>
+          <td>Bisolvon tab 8 mg</td>
           <td>1</td>
-          <td>01/06/2020</td>
-          <td>80</td>
-          <td><button class="btn btn-outline-primary">Order</button></td>
+          <td>01/06/2018</td>
+          <td>10 Tablet(s)</td>
         </tr>
         </tbody>
       </table>
