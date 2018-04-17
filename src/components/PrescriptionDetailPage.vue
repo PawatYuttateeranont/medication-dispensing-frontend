@@ -2,7 +2,7 @@
   <div id="prescription-detail-page" class="container">
 
     <h3 class="text-left">Prescription Detail : 00001</h3>
-    <h6 class="text-left">Status: <span class="text-danger">Reject</span></h6>
+    <h6 class="text-left">Status: <span class="text-warning">Pending</span></h6>
 
     <div class="row pt-2 pb-2">
       <div class="col-4 text-left">
@@ -62,9 +62,10 @@
 
     <div class="row mt-3 mb-3">
       <div class="col-12 text-right">
-        <button type="button" class="btn btn-danger">Back</button>
-        <!--<button type="button" class="btn btn-danger">Cancel</button>-->
-        <!--<button type="button" class="btn btn-success">Submit</button>-->
+        <!--<button type="button" class="btn btn-danger">Back</button>-->
+        <button type="button" class="btn btn-danger">Cancel</button>
+        <button type="button" class="btn btn-warning">Reject</button>
+        <button type="button" class="btn btn-success">Submit</button>
       </div>
     </div>
 
