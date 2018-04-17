@@ -189,8 +189,22 @@
     },
     async created() {
       try {
-        const response = await axios.get('http://localhost:3000/users')
-        this.doctor = response.data.response
+        const patients = await axios.get('http://localhost:3000/patients')
+        const medicines = await axios.get('http://localhost:3000/medicines/valid')
+
+        /* formatted PATIENTS data */
+        for (let i in patients.data.data) {
+          patients.data.data[i].value = patients.data.data[i].PAT_ID
+          patients.data.data[i].text = patients.data.data[i].PAT_FNAME + " " + patients.data.data[i].PAT_LNAME
+        }
+        this.patients = patients.data.data
+
+        /* formatted MEDICINES data*/
+        for (let i in medicines.data.data) {
+          medicines.data.data[i].value = medicines.data.data[i].MED_ID
+          medicines.data.data[i].text = medicines.data.data[i].MED_NAME
+        }
+        this.drugs = medicines.data.data
       } catch (error) {
         console.log(error)
       }
