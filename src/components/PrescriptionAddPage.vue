@@ -167,7 +167,7 @@
           await axios.post('http://localhost:3000/create/prescription', request, options)
           console.log(request)
           console.log('created!')
-          this.router.push('/')
+          this.$router.push('/')
         } catch (error) {
           console.log(error)
         }
