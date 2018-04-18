@@ -87,7 +87,7 @@
     <div class="row">
       <div class="col-12">
         <label class="w-100 text-left">Note:</label>
-        <textarea rows="8" class="form-control"></textarea>
+        <textarea rows="8" class="form-control" v-model="note"></textarea>
       </div>
     </div>
 
@@ -103,6 +103,7 @@
 
 <script>
   import axios from 'axios';
+  import qs from 'qs';
   import { ModelSelect } from 'vue-search-select';
 
   export default {
@@ -112,22 +113,8 @@
     },
     data() {
       return {
-        patient :{
-          id: 'EX001',
-          name: 'Allison',
-          surname: 'Chaplin',
-          age: 25,
-          sex: 'Female',
-          allergy: '-'
-        },
         doctor: [],
-        patients: [
-          { value: '1', text: '00001', name: 'Pawat',   surname: 'Yuttateeranont', age: 20, sex: 'male', allergy: 'None' },
-          { value: '2', text: '00002', name: 'Hills',   surname: 'Jocelyn',        age: 21, sex: 'male',   allergy: 'None' },
-          { value: '3', text: '00003', name: 'Kuphal',  surname: 'Shakira',        age: 22, sex: 'male',   allergy: 'None' },
-          { value: '4', text: '00004', name: 'Hagenes', surname: 'Glenda',         age: 23, sex: 'female', allergy: 'None' },
-          { value: '5', text: '00005', name: 'Batz',    surname: 'Savion',         age: 24, sex: 'male',   allergy: 'None' }
-        ],
+        patients: [],
         selectedPatient: {
           value: '',
           text: '',
@@ -137,10 +124,7 @@
           sex: '',
           allergy: ''
         },
-        drugs: [
-          { value: '1', text: 'Aspirin', name: 'Aspirin', unit: 'Dose(s)' },
-          { value: '2', text: 'Mendilex', name: 'Mendilex', unit: 'Pill(s)' },
-        ],
+        drugs: [],
         selectedDrug: {
           value: '',
           text: '',
@@ -149,13 +133,14 @@
         },
         drugAmount: 0,
         selectedDrugs: [],
+        note: ''
       }
     },
     methods: {
       addDrug: function () {
         var drug = {
-          name: this.selectedDrug.name,
-          unit: this.selectedDrug.unit,
+          name: this.selectedDrug.MED_NAME,
+          stockId: this.selectedDrug.STOCK_ID,
           amount: this.drugAmount,
         }
         this.selectedDrugs.push(drug)
@@ -167,8 +152,25 @@
       deleteDrug: function (index) {
         this.selectedDrugs.splice(index ,1)
       },
-      createPrescription: function () {
-        console.log('creating . . .')
+      createPrescription: async function () {
+        let request = {
+          patientId: this.selectedPatient.PAT_ID,
+          doctorId: '000003',
+          note: this.note,
+          items: this.selectedDrugs
+        }
+        const options = {
+          method: 'POST',
+          headers: { 'content-type': 'application/x-www-form-urlencoded' },
+        }
+        try {
+          await axios.post('http://localhost:3000/create/prescription', request, options)
+          console.log(request)
+          console.log('created!')
+          this.router.push('/')
+        } catch (error) {
+          console.log(error)
+        }
       }
     },
     computed: {
