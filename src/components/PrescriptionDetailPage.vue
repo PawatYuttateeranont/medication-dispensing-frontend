@@ -61,7 +61,7 @@
         <!--<button type="button" class="btn btn-danger">Back</button>-->
         <button type="button" class="btn btn-outline-primary">Back</button>
         <button type="button" class="btn btn-danger" v-if="prescription[0].status==='PENDING'" @click="rejectPrescription">Reject</button>
-        <button type="button" class="btn btn-success" v-if="prescription[0].status==='PENDING'" @click="submitPrescription">Submit</button>
+        <button type="button" class="btn btn-success" v-if="prescription[0].status==='PENDING'" @click="acceptPrescription">Accept</button>
       </div>
     </div>
 
@@ -95,7 +95,7 @@
           console.log(error)
         }
       },
-      submitPrescription: async function () {
+      acceptPrescription: async function () {
         let request = {
           prescriptionId: this.prescription[0].prescriptionId,
           pharmarcistId: '000008',
