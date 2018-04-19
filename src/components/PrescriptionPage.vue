@@ -16,35 +16,16 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Doctor A</td>
-          <td>Pawat Yuttateeranont</td>
-          <td class="text-warning">Pending</td>
-          <td>31/03/2018</td>
-          <td>-</td>
-          <td>
-            <router-link to="/detail"><button type="button" class="btn btn-outline-primary">Detail</button></router-link>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Doctor B</td>
-          <td>John Cena</td>
-          <td class="text-success">Accpeted</td>
-          <td>31/03/2018</td>
-          <td>Pharmacist A</td>
-          <td>
-            <router-link to="/detail"><button type="button" class="btn btn-outline-primary">Detail</button></router-link>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Doctor C</td>
-          <td>Steve Jobs</td>
-          <td class="text-danger">Reject</td>
-          <td>31/03/2018</td>
-          <td>Pharmacist A</td>
+        <tr v-for="prescription in prescriptions">
+          <th scope="row">{{prescription.prescriptionId}}</th>
+          <td>{{prescription.doctor}}</td>
+          <td>{{prescription.patient}}</td>
+          <td v-if="prescription.status=='PENDING'" class="text-warning">{{prescription.status}}</td>
+          <td v-else-if="prescription.status=='REJECT'" class="text-danger">{{prescription.status}}</td>
+          <td v-else-if="prescription.status=='SUCCESS'" class="text-success">{{prescription.status}}</td>
+          <td>{{prescription.date}}</td>
+          <td v-if="prescription.by===null || prescription.by===''">-</td>
+          <td v-else>{{prescription.by}}</td>
           <td>
             <router-link to="/detail"><button type="button" class="btn btn-outline-primary">Detail</button></router-link>
           </td>
@@ -57,8 +38,25 @@
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
-    name: 'PrescriptionPage'
+    name: 'PrescriptionPage',
+    data () {
+      return {
+        prescriptions: []
+      }
+    },
+    async created() {
+      try {
+        const prescriptions = await axios.get('http://localhost:3000/prescriptions')
+        this.prescriptions = prescriptions.data.data
+        console.log(this.prescriptions)
+
+      } catch (error) {
+        console.log(error)
+      }
+
+    }
   }
 </script>
 
