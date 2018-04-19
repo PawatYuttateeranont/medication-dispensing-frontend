@@ -22,7 +22,7 @@
           <td>{{prescription.patient}}</td>
           <td v-if="prescription.status=='PENDING'" class="text-warning">{{prescription.status}}</td>
           <td v-else-if="prescription.status=='REJECT'" class="text-danger">{{prescription.status}}</td>
-          <td v-else-if="prescription.status=='SUCCESS'" class="text-success">{{prescription.status}}</td>
+          <td v-else-if="prescription.status=='ACCEPTED'" class="text-success">{{prescription.status}}</td>
           <td>{{prescription.date}}</td>
           <td v-if="prescription.by===null || prescription.by===''">-</td>
           <td v-else>{{prescription.by}}</td>

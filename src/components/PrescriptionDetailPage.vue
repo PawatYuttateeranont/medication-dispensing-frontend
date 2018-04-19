@@ -5,7 +5,7 @@
     <h6 class="text-left">Status:
       <span v-if="prescription[0].status==='PENDING'" class="text-warning">{{prescription[0].status}}</span>
       <span v-else-if="prescription[0].status==='REJECT'" class="text-danger">{{prescription[0].status}}</span>
-      <span v-else-if="prescription[0].status==='SUCCESS'" class="text-success">{{prescription[0].status}}</span>
+      <span v-else-if="prescription[0].status==='ACCEPTED'" class="text-success">{{prescription[0].status}}</span>
     </h6>
 
     <div class="row pt-2 pb-2">
@@ -51,8 +51,8 @@
     <div class="row">
       <div class="col-12">
         <label class="w-100 text-left">Note:</label>
-        <p class="text-left">{{prescription[0].note}}</p>
-        <!--<textarea rows="8" class="form-control"></textarea>-->
+        <textarea rows="8" class="form-control" v-model="prescription[0].note" v-if="prescription[0].status==='PENDING'"></textarea>
+        <p class="text-left" v-else>{{prescription[0].note}}</p>
       </div>
     </div>
 
@@ -79,11 +79,38 @@
       }
     },
     methods: {
-      rejectPrescription: function () {
-
+      rejectPrescription: async function () {
+        let request = {
+          prescriptionId: this.prescription[0].prescriptionId,
+          pharmarcistId: '000008',
+        }
+        const options = {
+          method: 'POST',
+          headers: { 'content-type': 'application/x-www-form-urlencoded' },
+        }
+        try {
+          await axios.post('http://localhost:3000/reject/prescription', request, options)
+          this.$router.push('/')
+        } catch (error) {
+          console.log(error)
+        }
       },
-      submitPrescription: function () {
-
+      submitPrescription: async function () {
+        let request = {
+          prescriptionId: this.prescription[0].prescriptionId,
+          pharmarcistId: '000008',
+          note: this.prescription[0].note,
+        }
+        const options = {
+          method: 'POST',
+          headers: { 'content-type': 'application/x-www-form-urlencoded' },
+        }
+        try {
+          await axios.post('http://localhost:3000/accept/prescription', request, options)
+          this.$router.push('/')
+        } catch (error) {
+          console.log(error)
+        }
       }
     },
     async created() {
