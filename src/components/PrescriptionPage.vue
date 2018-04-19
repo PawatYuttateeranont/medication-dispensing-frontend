@@ -27,7 +27,7 @@
           <td v-if="prescription.by===null || prescription.by===''">-</td>
           <td v-else>{{prescription.by}}</td>
           <td>
-            <router-link to="/detail"><button type="button" class="btn btn-outline-primary">Detail</button></router-link>
+            <router-link :to="{ path: '/detail/' + prescription.prescriptionId}"><button type="button" class="btn btn-outline-primary">Detail</button></router-link>
           </td>
         </tr>
         </tbody>
@@ -50,8 +50,6 @@
       try {
         const prescriptions = await axios.get('http://localhost:3000/prescriptions')
         this.prescriptions = prescriptions.data.data
-        console.log(this.prescriptions)
-
       } catch (error) {
         console.log(error)
       }

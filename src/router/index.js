@@ -29,7 +29,7 @@ export default new Router({
       component: PrescriptionPage
     },
     {
-      path: '/detail',
+      path: '/detail/:prescriptionId',
       name: 'PrescriptionDetailPage',
       component: PrescriptionDetailPage
     },
